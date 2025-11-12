@@ -1,6 +1,8 @@
 const tempo_display = document.getElementById("tempo_placeholder")
 const titulo_display = document.getElementById("titulo")
 
+const pling_audio = document.getElementById("pling")
+
 Notification.requestPermission((result) => {
   console.log(result);
 });
@@ -18,6 +20,7 @@ function tempo_menos_um() {
   } else {
     clearInterval(timer)
     const notification = new Notification("ACABOU")
+    pling_audio.play()
     //console.log("acabou.")
   }
 }
